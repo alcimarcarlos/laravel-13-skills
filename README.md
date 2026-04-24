@@ -1,6 +1,6 @@
 # Laravel 13 Skills Starter
 
-## PT-BR
+## PT_BR
 
 Base de projeto com skills para desenvolvimento de aplicações Laravel 13 com PHP 8.3+, APIs, testes, segurança, performance, Inertia, Laravel Boost, MCP e upgrades com Rector.
 
