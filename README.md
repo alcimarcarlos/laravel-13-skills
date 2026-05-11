@@ -14,6 +14,7 @@ Este repositório não é uma aplicação Laravel final. Ele é uma base de trab
 - padrões de API, dados, segurança e testes
 - padrões de frontend Laravel com Inertia
 - padrões de IA com Laravel Boost, AI SDK e MCP
+- mapeamento prático das PSRs aceitas da PHP-FIG para Laravel 13
 
 ### Estrutura
 
@@ -21,6 +22,7 @@ Este repositório não é uma aplicação Laravel final. Ele é uma base de trab
 - `.cursor/skills/*/SKILL.md`: skills especializadas
 - `.cursor/skills/*/reference.md`: referências detalhadas por skill
 - `docs/laravel-guidelines.md`: diretrizes do projeto
+- `docs/php-fig-psr-map.md`: mapa de PSRs aceitas, drafts, deprecated/abandoned e aplicação por skill
 
 ### Compatibilidade (Claude, Cursor e Codex)
 
@@ -87,6 +89,12 @@ Este repositório não é uma aplicação Laravel final. Ele é uma base de trab
 5. Validar com testes, Pint e análise estática quando disponíveis.
 6. Registrar riscos e próximos passos.
 
+### PSRs PHP-FIG
+
+- As skills usam PSRs aceitas como padrão de interoperabilidade, sem substituir convenções locais do Laravel.
+- Veja `docs/php-fig-psr-map.md` para o mapeamento de PSR-1, PSR-3, PSR-4, PSR-6, PSR-7, PSR-11, PSR-12, PSR-13, PSR-14, PSR-15, PSR-16, PSR-17, PSR-18 e PSR-20.
+- PSRs em draft são tratadas como referência opcional; PSRs deprecated ou abandoned não são requisitos.
+
 ### Exemplo de Uso no Claude/Codex
 
 Prompt sugerido:
@@ -117,6 +125,7 @@ This repository is not a final Laravel application. It is an AI-agent working ba
 - API, data, security, and testing patterns
 - Laravel frontend patterns with Inertia
 - AI patterns with Laravel Boost, AI SDK, and MCP
+- practical mapping from accepted PHP-FIG PSRs to Laravel 13 work
 
 ### Structure
 
@@ -124,6 +133,7 @@ This repository is not a final Laravel application. It is an AI-agent working ba
 - `.cursor/skills/*/SKILL.md`: specialized skills
 - `.cursor/skills/*/reference.md`: detailed references for each skill
 - `docs/laravel-guidelines.md`: project guidelines
+- `docs/php-fig-psr-map.md`: map of accepted, draft, deprecated/abandoned PSRs and their skill-level application
 
 ### Compatibility (Claude, Cursor, and Codex)
 
@@ -190,6 +200,12 @@ This repository is not a final Laravel application. It is an AI-agent working ba
 5. Validate with tests, Pint, and static analysis when available.
 6. Record risks and next steps.
 
+### PHP-FIG PSRs
+
+- The skills use accepted PSRs as interoperability defaults without replacing local Laravel conventions.
+- See `docs/php-fig-psr-map.md` for the mapping of PSR-1, PSR-3, PSR-4, PSR-6, PSR-7, PSR-11, PSR-12, PSR-13, PSR-14, PSR-15, PSR-16, PSR-17, PSR-18, and PSR-20.
+- Draft PSRs are optional references; deprecated or abandoned PSRs are not requirements.
+
 ### Claude/Codex Usage Example
 
 Suggested prompt:
@@ -203,4 +219,3 @@ Follow this project's AGENTS.md file and use these skills:
 Task:
 <describe the feature here>
 ```
-

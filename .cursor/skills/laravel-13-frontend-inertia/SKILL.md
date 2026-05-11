@@ -27,6 +27,7 @@ description: Use for Laravel 13 frontend work with Inertia.js, React, TypeScript
 - Ensure forms are keyboard accessible and errors are announced/visible.
 - Use optimistic UI only when rollback behavior is clear.
 - For realtime UI, prefer Laravel Reverb/Echo patterns already configured in the app.
+- Keep PHP-side Inertia controllers, requests, resources, and props PSR-1/4/12-compatible through the project formatter.
 
 ## Security + Performance Defaults
 

@@ -25,6 +25,7 @@ description: Use when upgrading a Laravel application or package to Laravel 13, 
 - Composer 2.
 - Align test stack with Pest 4 or PHPUnit 12 where applicable.
 - Check Laravel ecosystem packages such as Sanctum, Passport, Cashier, Horizon, Telescope, Livewire, Filament, Larastan/PHPStan, Collision, and Tinker.
+- Replace PSR-0/PSR-2-era assumptions with Composer PSR-4 autoloading and PSR-12/Pint formatting.
 
 ## Safety Defaults
 

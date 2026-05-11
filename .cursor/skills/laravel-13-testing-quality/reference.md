@@ -1,5 +1,13 @@
 # laravel-13-testing-quality Reference
 
+## PHP-FIG PSR Touchpoints
+
+- Use Pint as the practical PSR-12 gate when the project has it configured.
+- When code depends on `Psr\Log\LoggerInterface`, assert sensitive values are not logged and inject a fake/test logger where useful.
+- When code depends on `Psr\Http\Client\ClientInterface`, test request shape, error mapping, timeout/retry behavior, and response handling through a fake adapter.
+- When code depends on `Psr\Clock\ClockInterface`, inject a fixed clock instead of relying on wall-clock time.
+- Static analysis should prefer native PHP types first, with PHPDoc added only where generics, array shapes, or framework magic need it.
+
 ## Review + Quality
 
 ## Review Priorities

@@ -27,6 +27,7 @@ description: Use for Laravel 13 security, OWASP review, authentication, authoriz
 - Validate file uploads by MIME, size, extension expectations, storage disk, visibility, and authorization.
 - Never log secrets, tokens, passwords, raw PII payloads, or payment data.
 - Use encrypted casts or secure storage for sensitive fields when persistence is required.
+- When using PSR-3 logging or PSR-7/15 middleware boundaries, preserve the same redaction, authz, and safe-error rules as Laravel-native code.
 
 ## Structured Threat Checks (quick pass)
 

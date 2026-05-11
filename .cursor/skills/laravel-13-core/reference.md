@@ -2,6 +2,15 @@
 
 ## Architecture
 
+## PHP-FIG PSR Baseline
+
+- Apply PSR-1 and PSR-12-compatible style for PHP files, using Laravel Pint or the project's configured formatter.
+- Keep Composer PSR-4 autoload mappings aligned with namespaces and paths.
+- Prefer constructor injection over service-location. Use `Psr\Container\ContainerInterface` only for framework-agnostic code that genuinely needs a container contract.
+- Use Laravel events/listeners for application code. Use PSR-14 only when building package-style event integrations.
+- Use `Psr\Clock\ClockInterface` when a service needs portable injectable time; otherwise follow the project's Laravel time-testing pattern.
+- Do not revive PSR-0 or PSR-2 conventions in new code.
+
 ## HTTP Layer
 
 - Routes should be explicit, named, and grouped by middleware/domain.

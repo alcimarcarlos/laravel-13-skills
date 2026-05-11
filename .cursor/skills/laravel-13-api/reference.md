@@ -1,5 +1,14 @@
 # laravel-13-api Reference
 
+## PHP-FIG PSR Touchpoints
+
+- PSR-7: use only when a package, bridge, webhook SDK, or middleware stack expects immutable HTTP messages.
+- PSR-15: use for PSR request handlers/middleware. Do not replace normal Laravel middleware unless the integration requires it.
+- PSR-17: use factories when creating PSR-7 requests, responses, streams, or uploaded files.
+- PSR-18: use `Psr\Http\Client\ClientInterface` for portable API clients or package-like SDK boundaries. Prefer Laravel's `Http` client for ordinary app calls.
+- PSR-13: use typed link relations for hypermedia-heavy API packages; plain resource links are fine for normal Laravel APIs.
+- Keep API error documents compatible with RFC 9457 when adopted; this is separate from PHP-FIG PSRs.
+
 ## Problem Details
 
 Use RFC 9457-style problem documents for JSON API errors when the project uses or wants a consistent error contract.

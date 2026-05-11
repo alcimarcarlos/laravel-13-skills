@@ -1,5 +1,12 @@
 # laravel-13-data-performance Reference
 
+## PHP-FIG PSR Touchpoints
+
+- PSR-6 cache pools are useful for package-style components that need cache item metadata, deferred saves, or pool interoperability.
+- PSR-16 simple cache is useful for small portable services that only need key/value cache operations.
+- Prefer Laravel cache stores, tags, locks, and helpers for application code unless an explicit interface boundary calls for PSR-6 or PSR-16.
+- Use `Psr\Clock\ClockInterface` when cache expiry, retry windows, or idempotency windows need injectable portable time.
+
 ## Cache + Queue + Consistency
 
 ## Cache
