@@ -14,12 +14,23 @@ description: Use when upgrading a Laravel application or package to Laravel 13, 
 5. Run dry-run first, review diff, apply, clear caches, format, analyze, test.
 6. Produce manual checklist for breaking changes Rector cannot handle.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Keep the process **command-driven** and reproducible (`composer`, `rector`, tests), not IDE-driven.
+- Prefer splitting upgrades into **reviewable chunks** (constraints/packages → rector → manual fixes → quality gates).
+
 ## Laravel 13 Requirements
 
 - PHP 8.3+.
 - Composer 2.
 - Align test stack with Pest 4 or PHPUnit 12 where applicable.
 - Check Laravel ecosystem packages such as Sanctum, Passport, Cashier, Horizon, Telescope, Livewire, Filament, Larastan/PHPStan, Collision, and Tinker.
+
+## Safety Defaults
+
+- Do not delete/rename large surfaces without a migration plan.
+- Keep changes reversible where feasible; document intentional irreversibility.
+- Avoid mixing multiple major upgrades unless required by constraints.
 
 ## Reference
 

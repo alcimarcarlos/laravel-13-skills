@@ -13,6 +13,11 @@ description: Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, fea
 4. Use factories, fakes, and database assertions instead of brittle implementation assertions.
 5. Run targeted tests first, then formatting/static analysis if available.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Keep tests **deterministic**: avoid wall-clock dependencies and flaky async assertions.
+- Prefer assertions on **contracts** (HTTP status/JSON shape/DB state) so any agent can reason about correctness.
+
 ## Defaults
 
 - Prefer feature tests for HTTP behavior and integration boundaries.
@@ -21,6 +26,13 @@ description: Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, fea
 - Use Laravel fakes for Mail, Notification, Queue, Event, Bus, Storage, HTTP, and AI SDK where applicable.
 - Assert status, authorization, validation errors, response JSON/resource shape, database state, and dispatched side effects.
 - For code review, lead with behavioral bugs, security risks, and missing tests.
+
+## Quality Gates (recommended order)
+
+1. Run the smallest relevant test subset.
+2. Run formatting.
+3. Run static analysis if configured (respect baseline).
+4. Run broader suite only when shared surfaces were touched.
 
 ## Reference
 

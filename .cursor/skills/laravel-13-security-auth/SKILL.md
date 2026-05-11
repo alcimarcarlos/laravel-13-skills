@@ -12,6 +12,11 @@ description: Use for Laravel 13 security, OWASP review, authentication, authoriz
 3. Check direct object references and tenant boundaries before polishing code.
 4. Validate both allowed and denied behavior with tests when possible.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Use **explicit checklists** (authn/authz/input/logging) so any agent can execute the review.
+- Prefer **framework primitives** over bespoke security wrappers unless the project already has them.
+
 ## Defaults
 
 - Use Policies/Gates for authorization.
@@ -22,6 +27,13 @@ description: Use for Laravel 13 security, OWASP review, authentication, authoriz
 - Validate file uploads by MIME, size, extension expectations, storage disk, visibility, and authorization.
 - Never log secrets, tokens, passwords, raw PII payloads, or payment data.
 - Use encrypted casts or secure storage for sensitive fields when persistence is required.
+
+## Structured Threat Checks (quick pass)
+
+- **Broken Access Control**: ownership, tenant boundaries, admin bypass paths.
+- **Injection**: raw SQL fragments, unsafe `orderBy`/column selection, untrusted HTML.
+- **Sensitive Data Exposure**: resources/JSON, logs, queues, broadcasts, notifications, exception reporting.
+- **SSRF/File Upload**: user-supplied URLs, storage visibility, signed URLs, MIME enforcement.
 
 ## Reference
 

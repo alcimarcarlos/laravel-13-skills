@@ -1,6 +1,6 @@
 # laravel-13-security-auth Reference
 
-## authz
+## AuthN + AuthZ
 
 ## Authentication
 
@@ -29,7 +29,7 @@ Add tests for:
 - Admin or elevated role allowed/denied according to policy.
 - API token missing ability/scope denied.
 
-## owasp sensitive data
+## OWASP + Sensitive Data
 
 Review for:
 
@@ -50,3 +50,7 @@ Hardening defaults:
 - Use signed URLs for temporary private file access.
 - Redact sensitive data in logs and observability tools.
 - Rotate leaked keys immediately; do not commit `.env` secrets.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

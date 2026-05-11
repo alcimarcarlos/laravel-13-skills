@@ -1,6 +1,6 @@
 # laravel-13-api Reference
 
-## problem details
+## Problem Details
 
 Use RFC 9457-style problem documents for JSON API errors when the project uses or wants a consistent error contract.
 
@@ -25,7 +25,7 @@ Common statuses:
 
 Do not expose exception internals, SQL, tokens, stack traces, or sensitive identifiers in production API errors.
 
-## rest patterns
+## REST Patterns
 
 ## Route Shape
 
@@ -58,7 +58,7 @@ Controller responsibilities:
 - Include a status URL or job/resource identifier when useful.
 - Make jobs idempotent and retry-safe.
 
-## versioning
+## Versioning
 
 Use versioning when clients need stable contracts across releases.
 
@@ -81,3 +81,7 @@ Breaking changes:
 - Changing pagination structure.
 - Changing status codes or error shapes.
 - Tightening validation in a way existing clients may fail.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

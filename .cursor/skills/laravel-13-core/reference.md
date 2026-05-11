@@ -1,6 +1,6 @@
 # laravel-13-core Reference
 
-## architecture
+## Architecture
 
 ## HTTP Layer
 
@@ -32,7 +32,7 @@ Avoid an action/service when:
 - Jobs should be idempotent where retries are possible.
 - Avoid hidden global helpers for business behavior; inject dependencies or use framework facades where local style allows.
 
-## eloquent schema
+## Eloquent + Schema
 
 ## Models
 
@@ -64,7 +64,7 @@ Before changing a pattern, inspect similar files:
 - Factory state style.
 - Whether the project uses service classes, action classes, or direct model orchestration.
 
-## quality gates
+## Quality Gates
 
 Pick commands that exist in the target project:
 
@@ -88,3 +88,7 @@ For risky changes:
 - Run formatting.
 - Run static analysis if configured.
 - Run the broader suite only when the touched surface is shared or high risk.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

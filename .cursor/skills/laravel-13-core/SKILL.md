@@ -13,6 +13,12 @@ description: Use for Laravel 13 backend development in PHP 8.3+, including contr
 4. Design from the framework boundary inward: route/request -> policy -> controller/action/service -> model/query -> resource/response -> test.
 5. Validate with the smallest useful command set from `reference.md`.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Keep instructions **tool-agnostic**: "search/read/run" rather than IDE-specific actions.
+- Prefer **thin, reviewable diffs** over large refactors.
+- Always make **validation, authorization, and performance** explicit in the workflow for shared code paths.
+
 ## Defaults
 
 - Target Laravel 13 and PHP 8.3+.
@@ -25,6 +31,12 @@ description: Use for Laravel 13 backend development in PHP 8.3+, including contr
 - Prefer Laravel conventions over custom abstraction. Add repositories only for external persistence boundaries or when the project already uses them.
 - Use transactions for multi-write invariants.
 - Use queues for slow work after the response unless the user flow requires synchronous execution.
+
+## Clean Architecture Defaults (when no local convention exists)
+
+- Keep **domain decisions** close to the application layer (actions/services), not spread across controllers/views.
+- Prefer **DTOs/value objects** for non-trivial inputs/outputs (especially across async/jobs/integrations).
+- Avoid "helper soup": do not introduce global helpers for business rules.
 
 ## Reference
 

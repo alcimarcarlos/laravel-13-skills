@@ -17,6 +17,7 @@ You are working with a skill package for Laravel 13 development.
 - `.cursor/skills/<skill>/SKILL.md`: triggers, purpose, and main workflow.
 - `.cursor/skills/<skill>/reference.md`: details, checklists, and specific patterns.
 - `docs/laravel-guidelines.md`: general guidelines and source notes used during curation.
+- `docs/agent-compatibility.md`: cross-agent compatibility guidance (Cursor, Codex, Claude Code).
 
 ## Decision Order
 

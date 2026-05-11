@@ -1,6 +1,6 @@
 # laravel-13-frontend-inertia Reference
 
-## inertia forms
+## Inertia Forms
 
 ## Page Props
 
@@ -22,7 +22,7 @@
 - Prefer named routes for server-generated links.
 - Use partial reloads for large pages where appropriate.
 
-## ui realtime
+## UI + Realtime
 
 ## Accessibility
 
@@ -50,3 +50,7 @@ Cover:
 - Authorize private channels.
 - Avoid broadcasting sensitive payloads.
 - Reconcile realtime updates with pagination and filters.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

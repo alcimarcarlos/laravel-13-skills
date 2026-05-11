@@ -13,6 +13,11 @@ description: Use for Laravel 13 frontend work with Inertia.js, React, TypeScript
 4. Preserve validation, authorization, flash messages, loading, empty, error, offline, and unauthorized states.
 5. Test critical flows through feature tests and frontend tests when configured.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Prefer **stack detection** from `package.json`, `vite.config.*`, `resources/js`, and existing pages/components.
+- Keep guidance **framework-native** (Laravel validation + Inertia errors) to avoid agent-specific UI abstractions.
+
 ## Defaults
 
 - Use Inertia responses from controllers and typed page props where the project supports TypeScript.
@@ -22,6 +27,12 @@ description: Use for Laravel 13 frontend work with Inertia.js, React, TypeScript
 - Ensure forms are keyboard accessible and errors are announced/visible.
 - Use optimistic UI only when rollback behavior is clear.
 - For realtime UI, prefer Laravel Reverb/Echo patterns already configured in the app.
+
+## Security + Performance Defaults
+
+- Treat shared props like API responses: do not send hidden/sensitive fields.
+- Avoid N+1 in page props: eager load relationships before serialization.
+- Use partial reloads and paginated endpoints for large datasets.
 
 ## Reference
 

@@ -1,6 +1,6 @@
 # laravel-13-testing-quality Reference
 
-## review quality
+## Review + Quality
 
 ## Review Priorities
 
@@ -37,7 +37,7 @@ Before saying a feature is ready:
 - Migrations are reversible or intentionally documented.
 - API behavior has status/error/authorization coverage.
 
-## test patterns
+## Test Patterns
 
 ## HTTP Feature Tests
 
@@ -67,3 +67,7 @@ Use:
 - `Http::fake()` for external APIs.
 
 Do not fake the thing being tested if the purpose is to verify integration with that subsystem.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

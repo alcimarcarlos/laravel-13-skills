@@ -13,6 +13,11 @@ description: Use for Laravel 13 AI-assisted development, Laravel Boost, Laravel 
 4. Treat AI boundaries like external services: validate inputs, constrain outputs, fake in tests, and avoid leaking sensitive data.
 5. Test deterministic behavior around prompts, tools, schema validation, and fallback paths.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Treat "Boost" as optional. If unavailable, rely on `composer.json` + official docs and avoid guessing fast-moving APIs.
+- Keep MCP tool specs **self-describing** (name, purpose, input schema, output shape) so they work in any agent runtime.
+
 ## Defaults
 
 - Prefer official Laravel packages and patterns over hand-rolled clients.
@@ -21,6 +26,12 @@ description: Use for Laravel 13 AI-assisted development, Laravel Boost, Laravel 
 - Use fakes/mocks for AI providers in tests.
 - For MCP tools, define clear input schemas, narrow capabilities, authorization, and safe error messages.
 - For embeddings/vector search, document model, dimensions, storage, indexing, and refresh strategy.
+
+## Security + Cost Controls (default stance)
+
+- Never pass secrets/PII to providers unless strictly necessary and permitted.
+- Add guardrails against **prompt injection** and **tool overreach** (narrow tools, validate inputs, validate outputs).
+- Bound execution: max tokens, max tool calls, timeouts, retries, and budget controls when available.
 
 ## Reference
 

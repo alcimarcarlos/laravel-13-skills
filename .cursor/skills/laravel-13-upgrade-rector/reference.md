@@ -1,6 +1,6 @@
 # laravel-13-upgrade-rector Reference
 
-## checklist
+## Checklist
 
 Before changing code:
 
@@ -28,7 +28,7 @@ After upgrade:
 - Run targeted and full tests where feasible.
 - Review official Laravel 13 upgrade guide for manual framework changes.
 
-## rector
+## Rector
 
 Install:
 
@@ -85,3 +85,7 @@ php artisan test
 ```
 
 For packages, use `src` and `tests` paths instead of app-only directories.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

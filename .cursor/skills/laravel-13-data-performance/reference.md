@@ -1,6 +1,6 @@
 # laravel-13-data-performance Reference
 
-## cache queue consistency
+## Cache + Queue + Consistency
 
 ## Cache
 
@@ -22,7 +22,7 @@
 - Dispatch jobs after commit when they depend on committed data.
 - Avoid external HTTP calls inside database transactions.
 
-## queries
+## Queries
 
 ## N+1 Prevention
 
@@ -49,7 +49,7 @@
 - Check query count in tests or debug tools.
 - Use database `EXPLAIN` for slow queries.
 
-## schema indexes
+## Schema + Indexes
 
 ## Index Selection
 
@@ -73,3 +73,7 @@ Avoid indexes that:
 - For large tables, split add-column, backfill, constraint, and not-null changes.
 - Avoid destructive changes without data migration and rollback plan.
 - Prefer nullable columns with safe defaults during rolling deploys.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

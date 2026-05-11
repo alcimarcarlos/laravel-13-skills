@@ -1,6 +1,6 @@
 # laravel-13-ai-boost-mcp Reference
 
-## ai sdk
+## AI SDK
 
 Patterns:
 
@@ -19,7 +19,7 @@ Risk checks:
 - Unbounded token/cost growth.
 - Non-deterministic output used as authority without validation.
 
-## boost
+## Boost
 
 Use Boost when available to:
 
@@ -33,7 +33,7 @@ When Boost is not installed:
 - Prefer official Laravel 13 docs for APIs.
 - Avoid guessing APIs for newly released packages.
 
-## mcp
+## MCP
 
 For MCP tools:
 
@@ -61,3 +61,7 @@ Testing:
 - Test authorization denial.
 - Test success output shape.
 - Test provider/app failure behavior.
+
+## Agent Compatibility Notes
+
+For cross-agent usage guidance, see `docs/agent-compatibility.md`.

@@ -13,6 +13,11 @@ description: Use for Laravel 13 REST API design and implementation, including AP
 4. Serialize with Resources, not raw models.
 5. Test success, validation failure, authorization failure, not found, and pagination/version behavior when applicable.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Describe the **contract** in plain terms first (method, URL, auth, payload, response shape).
+- Keep API guidance **framework-native** (Form Requests, Policies, Resources) to avoid agent-specific abstractions.
+
 ## API Defaults
 
 - Use consistent route grouping and naming.
@@ -22,6 +27,12 @@ description: Use for Laravel 13 REST API design and implementation, including AP
 - Use Sanctum for first-party/token API auth unless the project already uses Passport or another provider.
 - Use Problem Details style errors when the project accepts opinionated API contracts. See `reference.md`.
 - Keep API versioning explicit and documented. See `reference.md`.
+
+## Security + Performance Defaults
+
+- Enforce **authz** at both query and policy levels (avoid cross-tenant leaks).
+- Avoid N+1 and unbounded lists; use **explicit eager loading** and bounded pagination.
+- Never leak exception internals or sensitive fields in API resources or error payloads.
 
 ## Reference
 

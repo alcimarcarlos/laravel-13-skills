@@ -13,6 +13,11 @@ description: Use for Laravel 13 database, Eloquent, caching, performance, queues
 4. Prefer measurable changes: query count, explain plans, response time, memory, queue time, or lock duration.
 5. Add regression tests for N+1, filtering, pagination, transactions, or job behavior when feasible.
 
+## Agent Compatibility (Cursor, Codex, Claude Code)
+
+- Prefer **measurable** improvements (query count, EXPLAIN, memory) over speculative refactors.
+- Keep performance guidance **environment-safe**: no assumptions about local tooling beyond standard Laravel/PHP commands.
+
 ## Defaults
 
 - Eager load relationships used in loops.
@@ -23,6 +28,12 @@ description: Use for Laravel 13 database, Eloquent, caching, performance, queues
 - Cache computed reads with explicit invalidation or short TTLs.
 - Use transactions for multi-write invariants.
 - Queue slow, retryable work and make jobs idempotent.
+
+## Safety Defaults (correctness + security)
+
+- Do not cache **authorization decisions** unless the cache key fully captures user/tenant/ability scope.
+- Do not move external HTTP calls inside transactions; dispatch after commit when needed.
+- When adding indexes/migrations on large tables, prefer **low-lock** patterns and reversible steps.
 
 ## Reference
 
