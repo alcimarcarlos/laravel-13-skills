@@ -1,5 +1,12 @@
 # laravel-13-security-auth Reference
 
+## PHP-FIG PSR Touchpoints
+
+- PSR-3 log context must not include secrets, tokens, raw PII, payment data, or credentials.
+- PSR-7 request/response objects can still carry sensitive headers, uploaded files, streams, and bodies; review them like Laravel requests.
+- PSR-15 middleware/request handlers must enforce the same authentication, authorization, CSRF, tenant, and rate-limit expectations as Laravel middleware.
+- PSR-18 clients should define safe timeouts, avoid SSRF-prone unvalidated URLs, and map provider errors without leaking internals.
+
 ## AuthN + AuthZ
 
 ## Authentication

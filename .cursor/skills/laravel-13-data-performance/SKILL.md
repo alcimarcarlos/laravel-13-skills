@@ -28,6 +28,7 @@ description: Use for Laravel 13 database, Eloquent, caching, performance, queues
 - Cache computed reads with explicit invalidation or short TTLs.
 - Use transactions for multi-write invariants.
 - Queue slow, retryable work and make jobs idempotent.
+- Use PSR-6/16 cache interfaces only for interoperable package boundaries; prefer Laravel cache APIs for ordinary application work.
 
 ## Safety Defaults (correctness + security)
 

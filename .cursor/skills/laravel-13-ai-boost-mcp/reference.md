@@ -1,5 +1,13 @@
 # laravel-13-ai-boost-mcp Reference
 
+## PHP-FIG PSR Touchpoints
+
+- PSR-3: inject `LoggerInterface` for provider/tool telemetry, with redacted context.
+- PSR-18: use `ClientInterface` for portable provider clients or SDK-like adapters; Laravel `Http` remains fine for application-local calls.
+- PSR-20: inject clocks for rate limits, token budgets, retries, transcript retention, and deterministic tests.
+- PSR-11: expose container dependencies only at package/framework boundaries; prefer explicit constructor dependencies inside application services.
+- PSR-6/16: use interoperable cache interfaces for reusable embeddings, model metadata, or provider cache packages; use Laravel cache for ordinary app storage.
+
 ## AI SDK
 
 Patterns:

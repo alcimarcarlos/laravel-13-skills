@@ -1,5 +1,11 @@
 # laravel-13-frontend-inertia Reference
 
+## PHP-FIG PSR Touchpoints
+
+- PHP-side controllers, Form Requests, resources, and shared-prop providers should follow PSR-1, PSR-4, and PSR-12/Pint conventions.
+- Frontend TypeScript, React/Vue/Svelte, Tailwind, and Vite code follows the project's JavaScript formatter and lint rules, not PHP-FIG PSRs.
+- If an Inertia page uses server-side HTTP integrations, apply the API skill's PSR-7/17/18 guidance at that boundary.
+
 ## Inertia Forms
 
 ## Page Props

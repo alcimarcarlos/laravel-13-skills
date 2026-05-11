@@ -23,6 +23,7 @@ description: Use for Laravel 13 backend development in PHP 8.3+, including contr
 
 - Target Laravel 13 and PHP 8.3+.
 - Add `declare(strict_types=1);` to new PHP files when the project uses it.
+- Follow accepted PHP-FIG PSRs where relevant: PSR-1 for basic PHP code, PSR-4 for autoloading, PSR-12 via Pint, PSR-11/14/20 at package or integration boundaries.
 - Type parameters and return values.
 - Keep controllers thin: validate/authorize, call an action/service when behavior is non-trivial, return a response/resource/redirect.
 - Use Form Requests for validation and request authorization.

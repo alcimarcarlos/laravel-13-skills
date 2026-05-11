@@ -26,6 +26,7 @@ description: Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, fea
 - Use Laravel fakes for Mail, Notification, Queue, Event, Bus, Storage, HTTP, and AI SDK where applicable.
 - Assert status, authorization, validation errors, response JSON/resource shape, database state, and dispatched side effects.
 - For code review, lead with behavioral bugs, security risks, and missing tests.
+- Validate PSR-12 formatting through Pint and test PSR-boundary dependencies with fakes/adapters when the code uses PSR-3, PSR-18, or PSR-20.
 
 ## Quality Gates (recommended order)
 

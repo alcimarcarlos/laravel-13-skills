@@ -1,5 +1,12 @@
 # laravel-13-upgrade-rector Reference
 
+## PHP-FIG PSR Touchpoints
+
+- Replace legacy PSR-0 autoload assumptions with Composer PSR-4 mappings.
+- Replace PSR-2 style expectations with PSR-12-compatible Laravel Pint formatting.
+- Check package upgrades for PSR interface version changes, especially `psr/log`, `psr/cache`, `psr/simple-cache`, `psr/http-message`, `psr/http-client`, `psr/container`, and `psr/clock`.
+- Preserve Laravel-native request, response, cache, event, and container usage unless the project is explicitly moving a package boundary to PSR interfaces.
+
 ## Checklist
 
 Before changing code:

@@ -26,6 +26,7 @@ description: Use for Laravel 13 AI-assisted development, Laravel Boost, Laravel 
 - Use fakes/mocks for AI providers in tests.
 - For MCP tools, define clear input schemas, narrow capabilities, authorization, and safe error messages.
 - For embeddings/vector search, document model, dimensions, storage, indexing, and refresh strategy.
+- For package-style AI/MCP integrations, prefer PSR-3 logging, PSR-18 HTTP clients, PSR-20 clocks, and PSR-11 container boundaries when interoperability is useful.
 
 ## Security + Cost Controls (default stance)
 

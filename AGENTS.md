@@ -9,6 +9,7 @@ You are working with a skill package for Laravel 13 development.
 - Use the smallest relevant skill for the task.
 - For details, read the triggered skill's `reference.md`.
 - Prefer native Laravel patterns over custom abstractions.
+- Apply accepted PHP-FIG PSRs where relevant; see `docs/php-fig-psr-map.md` for the Laravel skill mapping.
 - Generate testable code with clear validation and low coupling.
 - Do not create ceremonial architecture when a simple Laravel convention solves the problem.
 
@@ -38,4 +39,4 @@ You are working with a skill package for Laravel 13 development.
 - Jobs for slow or retryable work.
 - Tests for critical behavior.
 - Pint and static analysis when configured.
-
+- PSR-1/4/12-compatible PHP code, with PSR interfaces used at package/integration boundaries when useful.

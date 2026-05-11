@@ -27,6 +27,7 @@ description: Use for Laravel 13 REST API design and implementation, including AP
 - Use Sanctum for first-party/token API auth unless the project already uses Passport or another provider.
 - Use Problem Details style errors when the project accepts opinionated API contracts. See `reference.md`.
 - Keep API versioning explicit and documented. See `reference.md`.
+- Use PSR-7/15/17/18 only at HTTP interoperability boundaries; keep ordinary Laravel controllers, middleware, Resources, and tests Laravel-native.
 
 ## Security + Performance Defaults
 
