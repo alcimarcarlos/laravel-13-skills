@@ -95,6 +95,19 @@ Este repositório não é uma aplicação Laravel final. Ele é uma base de trab
 - Veja `docs/php-fig-psr-map.md` para o mapeamento de PSR-1, PSR-3, PSR-4, PSR-6, PSR-7, PSR-11, PSR-12, PSR-13, PSR-14, PSR-15, PSR-16, PSR-17, PSR-18 e PSR-20.
 - PSRs em draft são tratadas como referência opcional; PSRs deprecated ou abandoned não são requisitos.
 
+Mapa rápido por skill:
+
+| Skill | PSRs principais |
+| --- | --- |
+| `laravel-13-core` | PSR-1, PSR-4, PSR-11, PSR-12, PSR-14, PSR-20 |
+| `laravel-13-api` | PSR-7, PSR-13, PSR-15, PSR-17, PSR-18 |
+| `laravel-13-data-performance` | PSR-6, PSR-16, PSR-20 |
+| `laravel-13-testing-quality` | PSR-3, PSR-12, PSR-18, PSR-20 |
+| `laravel-13-security-auth` | PSR-3, PSR-7, PSR-15, PSR-18 |
+| `laravel-13-frontend-inertia` | PSR-1, PSR-4, PSR-12 no código PHP |
+| `laravel-13-ai-boost-mcp` | PSR-3, PSR-6, PSR-11, PSR-16, PSR-18, PSR-20 |
+| `laravel-13-upgrade-rector` | PSR-4, PSR-12 e remoção de pressupostos PSR-0/PSR-2 |
+
 ### Exemplo de Uso no Claude/Codex
 
 Prompt sugerido:
@@ -205,6 +218,19 @@ This repository is not a final Laravel application. It is an AI-agent working ba
 - The skills use accepted PSRs as interoperability defaults without replacing local Laravel conventions.
 - See `docs/php-fig-psr-map.md` for the mapping of PSR-1, PSR-3, PSR-4, PSR-6, PSR-7, PSR-11, PSR-12, PSR-13, PSR-14, PSR-15, PSR-16, PSR-17, PSR-18, and PSR-20.
 - Draft PSRs are optional references; deprecated or abandoned PSRs are not requirements.
+
+Quick skill map:
+
+| Skill | Main PSRs |
+| --- | --- |
+| `laravel-13-core` | PSR-1, PSR-4, PSR-11, PSR-12, PSR-14, PSR-20 |
+| `laravel-13-api` | PSR-7, PSR-13, PSR-15, PSR-17, PSR-18 |
+| `laravel-13-data-performance` | PSR-6, PSR-16, PSR-20 |
+| `laravel-13-testing-quality` | PSR-3, PSR-12, PSR-18, PSR-20 |
+| `laravel-13-security-auth` | PSR-3, PSR-7, PSR-15, PSR-18 |
+| `laravel-13-frontend-inertia` | PSR-1, PSR-4, PSR-12 for PHP code |
+| `laravel-13-ai-boost-mcp` | PSR-3, PSR-6, PSR-11, PSR-16, PSR-18, PSR-20 |
+| `laravel-13-upgrade-rector` | PSR-4, PSR-12, and removal of PSR-0/PSR-2 assumptions |
 
 ### Claude/Codex Usage Example
 
