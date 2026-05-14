@@ -1,6 +1,7 @@
 ---
 name: laravel-13-security-auth
-description: Use for Laravel 13 security, OWASP review, authentication, authorization, Sanctum, Passport, policies, gates, Form Request authorize methods, session/token handling, validation hardening, mass assignment, file upload security, secrets, PII, and sensitive data handling.
+description: "Use for Laravel 13 security, OWASP review, authentication, authorization, Sanctum, Passport, policies, gates, Form Request authorize methods, session/token handling, validation hardening, mass assignment, file upload security, secrets, PII, and sensitive data handling."
+license: UNLICENSED
 ---
 
 # Laravel 13 Security and Auth

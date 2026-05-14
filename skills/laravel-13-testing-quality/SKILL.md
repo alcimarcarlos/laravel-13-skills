@@ -1,6 +1,7 @@
 ---
 name: laravel-13-testing-quality
-description: Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, feature/unit tests, HTTP tests, database assertions, facade fakes, code review, Pint, Larastan/PHPStan, quality gates, CI readiness, and release validation.
+description: "Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, feature/unit tests, HTTP tests, database assertions, facade fakes, code review, Pint, Larastan/PHPStan, quality gates, CI readiness, and release validation."
+license: UNLICENSED
 ---
 
 # Laravel 13 Testing and Quality

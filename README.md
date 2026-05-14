@@ -1,221 +1,118 @@
-# Laravel 13 Skills Starter
+# Laravel 13 Skills
 
-## PT_BR
+## Objetivo
 
-Base de projeto com skills para desenvolvimento de aplicações Laravel 13 com PHP 8.3+, APIs, testes, segurança, performance, Inertia, Laravel Boost, MCP e upgrades com Rector.
+Skills para Laravel 13 com PHP 8.3+, APIs, Eloquent, segurança, testes, Inertia, performance, Laravel Boost, MCP e upgrades com Rector.
 
-### Objetivo
+Este pacote não é uma aplicação final. Ele é uma coleção portátil de instruções para agentes de código trabalharem em projetos reais com padrões consistentes.
 
-Este repositório não é uma aplicação Laravel final. Ele é uma base de trabalho para agentes de IA:
+## Compatibilidade
 
-- governança do agente
-- skills especializadas
-- convenções de arquitetura Laravel 13
-- padrões de API, dados, segurança e testes
-- padrões de frontend Laravel com Inertia
-- padrões de IA com Laravel Boost, AI SDK e MCP
-- mapeamento prático das PSRs aceitas da PHP-FIG para Laravel 13
+| Agente | Entrada recomendada |
+| --- | --- |
+| Cursor | `.cursor/rules/skills.mdc` e aliases em `.cursor/skills/<skill-name>` |
+| Codex | `skills/<skill-name>/SKILL.md` ou cópia/symlink em `$CODEX_HOME/skills` |
+| Claude Code | `CLAUDE.md`, depois `skills/<skill-name>/SKILL.md` |
+| GitHub Copilot | `.github/copilot-instructions.md`, apontando para `AGENTS.md` e `skills/` |
 
-### Estrutura
+## Estrutura
 
-- `AGENTS.md`: governança global do agente
-- `.cursor/skills/*/SKILL.md`: skills especializadas
-- `.cursor/skills/*/reference.md`: referências detalhadas por skill
-- `docs/laravel-guidelines.md`: diretrizes do projeto
-- `docs/php-fig-psr-map.md`: mapa de PSRs aceitas, drafts, deprecated/abandoned e aplicação por skill
+- `AGENTS.md`: instruções operacionais para agentes.
+- `CLAUDE.md`: ponto de entrada curto para Claude Code.
+- `.cursor/rules/skills.mdc`: regra de descoberta para Cursor.
+- `.cursor/skills/<skill-name>`: symlink para `skills/<skill-name>`.
+- `.github/copilot-instructions.md`: instruções curtas para GitHub Copilot.
+- `skills/<skill-name>/SKILL.md`: fonte canônica da skill.
+- `skills/<skill-name>/reference.md`: detalhes carregados somente quando a skill pedir.
 
-### Compatibilidade (Claude, Cursor e Codex)
+## Stack Coberta
 
-- Este pacote foi escrito para uso multiagente.
-- `AGENTS.md` contém regras gerais de comportamento e entrega.
-- Os arquivos `.cursor/skills/*/SKILL.md` podem ser usados:
-  - diretamente no Cursor, ou
-  - como playbooks manuais no Claude/Codex, copiando ou referenciando o conteúdo relevante.
-- Ao usar Claude/Codex, priorize:
-  1. `AGENTS.md`
-  2. a skill específica do tema
-  3. `laravel-13-core` para contexto base
+- Laravel 13
+- PHP 8.3+
+- Eloquent
+- Sanctum
+- Inertia
+- Pest/PHPUnit
+- Rector
 
-### Skills Disponíveis
+## Como Escolher Skills
 
-#### Base Laravel
+1. Leia `AGENTS.md` para as regras gerais da coleção.
+2. Escolha a menor skill que cobre a tarefa.
+3. Use `laravel-13-core` como baseline quando a tarefa cruzar vários temas.
+4. Leia `reference.md` apenas quando a skill ou a complexidade da tarefa pedir.
+5. Valide com os comandos disponíveis no projeto alvo.
 
-- `laravel-13-core`: controllers, models, rotas, Form Requests, actions/services, jobs, events, policies, migrations, factories e arquitetura.
-- `laravel-13-api`: APIs REST, Resources, versionamento, paginação, Problem Details, Sanctum e testes de contrato.
-- `laravel-13-data-performance`: Eloquent, N+1, índices, migrations seguras, cache, filas, Horizon, transações e grandes volumes.
-- `laravel-13-testing-quality`: Pest/PHPUnit, factories, fakes, feature tests, Pint, Larastan/PHPStan, revisão e readiness.
+## Skills Disponíveis
 
-#### Segurança e Interfaces
+| Skill | Quando usar |
+| --- | --- |
+| `laravel-13-ai-boost-mcp` | Use for Laravel 13 AI-assisted development, Laravel Boost, Laravel AI SDK, laravel/ai, MCP server development, MCP tools/prompts/resources, AI agents, structured output, embeddings, vector search, reranking, image/audio generation, AI fakes in tests, and Boost search-docs workflows. |
+| `laravel-13-api` | Use for Laravel 13 REST API design and implementation, including API routes, resources, JSON responses, RFC 9457 Problem Details, versioning, pagination, Sanctum token auth, policies, Form Requests, OpenAPI-style contracts, async 202 workflows, and API tests. |
+| `laravel-13-core` | Use for Laravel 13 backend development in PHP 8.3+, including controllers, models, routes, Form Requests, services/actions, jobs, events, policies, migrations, factories, Blade-adjacent backend code, code review, and architecture decisions. Trigger whenever building, modifying, or reviewing ordinary Laravel application code. |
+| `laravel-13-data-performance` | Use for Laravel 13 database, Eloquent, caching, performance, queues, Horizon, transactions, indexing, N+1 fixes, chunking, cursor pagination, Redis/cache design, query optimization, large datasets, and zero-downtime migration concerns. |
+| `laravel-13-frontend-inertia` | Use for Laravel 13 frontend work with Inertia.js, React, TypeScript, Tailwind, Vite, Blade integration, forms, validation errors, shared props, SSR, accessibility, realtime UI, file uploads, and frontend tests in Laravel applications. |
+| `laravel-13-security-auth` | Use for Laravel 13 security, OWASP review, authentication, authorization, Sanctum, Passport, policies, gates, Form Request authorize methods, session/token handling, validation hardening, mass assignment, file upload security, secrets, PII, and sensitive data handling. |
+| `laravel-13-testing-quality` | Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, feature/unit tests, HTTP tests, database assertions, facade fakes, code review, Pint, Larastan/PHPStan, quality gates, CI readiness, and release validation. |
+| `laravel-13-upgrade-rector` | Use when upgrading a Laravel application or package to Laravel 13, migrating Laravel versions, configuring Rector with driftingly/rector-laravel, checking PHP 8.3+ requirements, resolving composer conflicts, planning dependency upgrades, or producing a Laravel 13 upgrade checklist. |
 
-- `laravel-13-security-auth`: autenticação, autorização, policies, OWASP, uploads, mass assignment, secrets e dados sensíveis.
-- `laravel-13-frontend-inertia`: Inertia, React, TypeScript, Tailwind, formulários, shared props, SSR, acessibilidade e realtime UI.
+## Qualidade e Validação
 
-#### IA e Upgrade
+Execute o menor conjunto relevante que existir no projeto alvo:
 
-- `laravel-13-ai-boost-mcp`: Laravel Boost, Laravel AI SDK, MCP tools/prompts/resources, embeddings, vector search e testes com fakes.
-- `laravel-13-upgrade-rector`: upgrades para Laravel 13 com Rector, `driftingly/rector-laravel`, Composer e checklists de breaking changes.
+- `php artisan test`
+- `vendor/bin/pest`
+- `vendor/bin/phpunit`
+- `vendor/bin/pint`
+- `vendor/bin/phpstan analyse`
+- `composer test`
 
-### Quando Usar Cada Skill
+## Notas de Uso
 
-- **Core Laravel**: sempre que houver código backend Laravel comum.
-- **API**: endpoints, contratos JSON, Resources, autenticação de API, versionamento e erros.
-- **Data/Performance**: queries lentas, N+1, migrations, índices, cache, jobs, transações ou grandes volumes.
-- **Testing/Quality**: ao escrever testes, revisar código ou preparar merge/release.
-- **Security/Auth**: sessões, tokens, policies, tenants, permissões, uploads, PII ou dados sensíveis.
-- **Frontend Inertia**: telas Laravel com Inertia, React, Tailwind, formulários e estados de UI.
-- **AI/Boost/MCP**: Laravel Boost, AI SDK, agentes, ferramentas MCP e busca vetorial.
-- **Upgrade/Rector**: migrações de versão, Laravel 13, PHP 8.3+, Composer e automação com Rector.
+- Prefira padrões nativos Laravel antes de abstrações novas.
+- Use laravel-13-security-auth quando houver sessão, token, tenant, policy, upload, PII ou segredo.
+- Aplique PSRs aceitas em pontos de interoperabilidade sem substituir convenções Laravel.
 
-### Como Usar
+## Instalação por Symlink
 
-1. Abra esta pasta no seu ambiente de desenvolvimento.
-2. Mantenha `AGENTS.md` na raiz do repositório.
-3. Mantenha as skills em `.cursor/skills/`.
-4. Peça tarefas ao agente citando claramente o contexto do módulo.
-5. Para geração de código, informe sempre:
-   - objetivo da feature
-   - rota/API envolvida
-   - regra de negócio
-   - modelo de dados
-   - perfil de usuário/permissão
-   - requisito de teste
+Para Codex:
 
-### Fluxo Recomendado
-
-1. Identificar domínio e versão Laravel/PHP.
-2. Escolher a skill principal.
-3. Ler o `reference.md` da skill quando a tarefa precisar de detalhe.
-4. Implementar seguindo as convenções locais do projeto alvo.
-5. Validar com testes, Pint e análise estática quando disponíveis.
-6. Registrar riscos e próximos passos.
-
-### PSRs PHP-FIG
-
-- As skills usam PSRs aceitas como padrão de interoperabilidade, sem substituir convenções locais do Laravel.
-- Veja `docs/php-fig-psr-map.md` para o mapeamento de PSR-1, PSR-3, PSR-4, PSR-6, PSR-7, PSR-11, PSR-12, PSR-13, PSR-14, PSR-15, PSR-16, PSR-17, PSR-18 e PSR-20.
-- PSRs em draft são tratadas como referência opcional; PSRs deprecated ou abandoned não são requisitos.
-
-### Exemplo de Uso no Claude/Codex
-
-Prompt sugerido:
-
-```text
-Siga o arquivo AGENTS.md deste projeto e use como base as skills:
-- laravel-13-core
-- laravel-13-api
-- laravel-13-testing-quality
-
-Tarefa:
-<descreva aqui a feature>
+```bash
+mkdir -p "$HOME/.codex/skills"
+for d in skills/*; do
+  name="$(basename "$d")"
+  ln -sfn "$(pwd)/$d" "$HOME/.codex/skills/$name"
+done
 ```
 
----
+Para Claude Code:
 
-## EN
+```bash
+mkdir -p "$HOME/.claude/skills"
+for d in skills/*; do
+  name="$(basename "$d")"
+  ln -sfn "$(pwd)/$d" "$HOME/.claude/skills/$name"
+done
+```
 
-Project starter with skills for Laravel 13 application development with PHP 8.3+, APIs, tests, security, performance, Inertia, Laravel Boost, MCP, and Rector-based upgrades.
+Para Cursor em um projeto consumidor:
 
-### Purpose
+```bash
+mkdir -p .cursor/skills
+for d in skills/*; do
+  name="$(basename "$d")"
+  ln -sfn "../../skills/$name" ".cursor/skills/$name"
+done
+```
 
-This repository is not a final Laravel application. It is an AI-agent working base for:
-
-- agent governance
-- specialized skills
-- Laravel 13 architecture conventions
-- API, data, security, and testing patterns
-- Laravel frontend patterns with Inertia
-- AI patterns with Laravel Boost, AI SDK, and MCP
-- practical mapping from accepted PHP-FIG PSRs to Laravel 13 work
-
-### Structure
-
-- `AGENTS.md`: global agent governance
-- `.cursor/skills/*/SKILL.md`: specialized skills
-- `.cursor/skills/*/reference.md`: detailed references for each skill
-- `docs/laravel-guidelines.md`: project guidelines
-- `docs/php-fig-psr-map.md`: map of accepted, draft, deprecated/abandoned PSRs and their skill-level application
-
-### Compatibility (Claude, Cursor, and Codex)
-
-- This package is written for multi-agent usage.
-- `AGENTS.md` contains general behavior and delivery rules.
-- `.cursor/skills/*/SKILL.md` files can be used:
-  - directly in Cursor, or
-  - as manual playbooks in Claude/Codex by copying or referencing the relevant content.
-- When using Claude/Codex, prioritize:
-  1. `AGENTS.md`
-  2. the topic-specific skill
-  3. `laravel-13-core` for baseline context
-
-### Available Skills
-
-#### Laravel Base
-
-- `laravel-13-core`: controllers, models, routes, Form Requests, actions/services, jobs, events, policies, migrations, factories, and architecture.
-- `laravel-13-api`: REST APIs, Resources, versioning, pagination, Problem Details, Sanctum, and contract tests.
-- `laravel-13-data-performance`: Eloquent, N+1 issues, indexes, safe migrations, cache, queues, Horizon, transactions, and large datasets.
-- `laravel-13-testing-quality`: Pest/PHPUnit, factories, fakes, feature tests, Pint, Larastan/PHPStan, review, and readiness.
-
-#### Security and Interfaces
-
-- `laravel-13-security-auth`: authentication, authorization, policies, OWASP, uploads, mass assignment, secrets, and sensitive data.
-- `laravel-13-frontend-inertia`: Inertia, React, TypeScript, Tailwind, forms, shared props, SSR, accessibility, and realtime UI.
-
-#### AI and Upgrade
-
-- `laravel-13-ai-boost-mcp`: Laravel Boost, Laravel AI SDK, MCP tools/prompts/resources, embeddings, vector search, and tests with fakes.
-- `laravel-13-upgrade-rector`: Laravel 13 upgrades with Rector, `driftingly/rector-laravel`, Composer, and breaking-change checklists.
-
-### When To Use Each Skill
-
-- **Core Laravel**: whenever ordinary Laravel backend code is involved.
-- **API**: endpoints, JSON contracts, Resources, API authentication, versioning, and errors.
-- **Data/Performance**: slow queries, N+1 issues, migrations, indexes, cache, jobs, transactions, or large datasets.
-- **Testing/Quality**: when writing tests, reviewing code, or preparing for merge/release.
-- **Security/Auth**: sessions, tokens, policies, tenants, permissions, uploads, PII, or sensitive data.
-- **Frontend Inertia**: Laravel screens with Inertia, React, Tailwind, forms, and UI states.
-- **AI/Boost/MCP**: Laravel Boost, AI SDK, agents, MCP tools, and vector search.
-- **Upgrade/Rector**: version migrations, Laravel 13, PHP 8.3+, Composer, and Rector automation.
-
-### How To Use
-
-1. Open this folder in your development environment.
-2. Keep `AGENTS.md` at the repository root.
-3. Keep skills under `.cursor/skills/`.
-4. Ask the agent for tasks while clearly naming the module context.
-5. For code generation, always provide:
-   - feature goal
-   - route/API involved
-   - business rule
-   - data model
-   - user role/permission
-   - test requirement
-
-### Recommended Flow
-
-1. Identify domain and Laravel/PHP version.
-2. Choose the primary skill.
-3. Read the skill's `reference.md` when the task needs detail.
-4. Implement following the target project's local conventions.
-5. Validate with tests, Pint, and static analysis when available.
-6. Record risks and next steps.
-
-### PHP-FIG PSRs
-
-- The skills use accepted PSRs as interoperability defaults without replacing local Laravel conventions.
-- See `docs/php-fig-psr-map.md` for the mapping of PSR-1, PSR-3, PSR-4, PSR-6, PSR-7, PSR-11, PSR-12, PSR-13, PSR-14, PSR-15, PSR-16, PSR-17, PSR-18, and PSR-20.
-- Draft PSRs are optional references; deprecated or abandoned PSRs are not requirements.
-
-### Claude/Codex Usage Example
-
-Suggested prompt:
+## Prompt Base
 
 ```text
-Follow this project's AGENTS.md file and use these skills:
-- laravel-13-core
-- laravel-13-api
-- laravel-13-testing-quality
+Siga AGENTS.md, escolha a menor skill aplicável em skills/<nome>/SKILL.md e carregue reference.md somente se necessário.
 
-Task:
-<describe the feature here>
+Contexto:
+- Stack: Laravel 13, PHP 8.3+, Eloquent, Sanctum, Inertia, Pest/PHPUnit, Rector
+- Objetivo: <descreva a tarefa>
+- Restrições: <auth, dados, UX, performance, compatibilidade>
+- Validação esperada: <testes/build/lint>
 ```

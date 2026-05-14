@@ -1,42 +1,66 @@
-# Laravel 13 Agent Instructions
+# Laravel 13 Skills Agent Instructions
 
-You are working with a skill package for Laravel 13 development.
+Use este arquivo como orientação operacional para Cursor, Codex, Claude Code e GitHub Copilot.
 
-## Principles
+## Princípios
 
-- Use Laravel 13 and PHP 8.3+ as the default reference unless the target project states otherwise.
-- Read the target project's existing patterns before introducing new conventions.
-- Use the smallest relevant skill for the task.
-- For details, read the triggered skill's `reference.md`.
-- Prefer native Laravel patterns over custom abstractions.
-- Apply accepted PHP-FIG PSRs where relevant; see `docs/php-fig-psr-map.md` for the Laravel skill mapping.
-- Generate testable code with clear validation and low coupling.
-- Do not create ceremonial architecture when a simple Laravel convention solves the problem.
+- Use a menor skill aplicável em `skills/<skill-name>/SKILL.md`.
+- Trate `skills/` como fonte canônica; `.cursor/skills/` contém apenas aliases.
+- Leia `reference.md` somente quando a skill pedir ou quando a tarefa exigir detalhe adicional.
+- Inspecione as convenções do projeto alvo antes de criar novos padrões.
+- Prefira linguagem e passos agnósticos de ferramenta.
+- Preserve segurança, validação, testes e performance como critérios explícitos de entrega.
 
-## Skill Structure
+## Stack Coberta
 
-- `.cursor/skills/<skill>/SKILL.md`: triggers, purpose, and main workflow.
-- `.cursor/skills/<skill>/reference.md`: details, checklists, and specific patterns.
-- `docs/laravel-guidelines.md`: general guidelines and source notes used during curation.
-- `docs/agent-compatibility.md`: cross-agent compatibility guidance (Cursor, Codex, Claude Code).
+- Laravel 13
+- PHP 8.3+
+- Eloquent
+- Sanctum
+- Inertia
+- Pest/PHPUnit
+- Rector
 
-## Decision Order
+## Ordem de Decisão
 
-1. Identify whether the task is backend, API, data/performance, testing, security, frontend Inertia, AI/MCP, or upgrade work.
-2. Use the corresponding skill.
-3. If the task crosses multiple contexts, use `laravel-13-core` as the base and add only the needed skills.
-4. Before editing code in a real Laravel project, inspect neighboring files, `composer.json`, routes, tests, and local conventions.
-5. When finished, report validation commands that ran or remained pending.
+1. Identifique o domínio real da tarefa e as dependências já presentes no projeto alvo.
+2. Escolha a skill principal mais específica.
+3. Use `laravel-13-core` como baseline quando houver múltiplas áreas.
+4. Adicione skills complementares só quando houver risco real de segurança, dados, UX, performance ou testes.
+5. Antes de editar, leia arquivos vizinhos e padrões existentes.
+6. Ao finalizar, reporte validações executadas e pendências.
 
-## Minimum Quality Bar
+## Qualidade Mínima
 
-- Thin controllers.
-- Form Requests for input validation/authorization.
-- Policies/Gates for authorization.
-- API Resources for structured JSON.
-- Eager loading for relationships used in lists/loops.
-- Transactions for multi-write invariants.
-- Jobs for slow or retryable work.
-- Tests for critical behavior.
-- Pint and static analysis when configured.
-- PSR-1/4/12-compatible PHP code, with PSR interfaces used at package/integration boundaries when useful.
+- Prefira padrões nativos Laravel antes de abstrações novas.
+- Use laravel-13-security-auth quando houver sessão, token, tenant, policy, upload, PII ou segredo.
+- Aplique PSRs aceitas em pontos de interoperabilidade sem substituir convenções Laravel.
+- Código deve seguir padrões locais do projeto alvo.
+- Mudanças devem ser pequenas, verificáveis e fáceis de revisar.
+- Não introduza frameworks, bibliotecas ou serviços opcionais só porque uma skill existe.
+
+## Comandos de Validação
+
+Use o menor conjunto que existir no projeto alvo:
+
+- `php artisan test`
+- `vendor/bin/pest`
+- `vendor/bin/phpunit`
+- `vendor/bin/pint`
+- `vendor/bin/phpstan analyse`
+- `composer test`
+
+## Compatibilidade por Agente
+
+- Cursor: use `.cursor/rules/skills.mdc` e `.cursor/skills/<skill-name>`.
+- Codex: use `skills/<skill-name>/SKILL.md` ou instale em `$CODEX_HOME/skills`.
+- Claude Code: comece por `CLAUDE.md` e depois pela skill específica.
+- GitHub Copilot: mantenha `.github/copilot-instructions.md` curto e apontando para este arquivo.
+
+## Formato de Resposta Recomendado
+
+1. Objetivo
+2. Arquivos alterados
+3. Decisões de implementação
+4. Testes e validação
+5. Riscos, suposições e pendências

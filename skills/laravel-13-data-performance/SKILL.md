@@ -1,6 +1,7 @@
 ---
 name: laravel-13-data-performance
-description: Use for Laravel 13 database, Eloquent, caching, performance, queues, Horizon, transactions, indexing, N+1 fixes, chunking, cursor pagination, Redis/cache design, query optimization, large datasets, and zero-downtime migration concerns.
+description: "Use for Laravel 13 database, Eloquent, caching, performance, queues, Horizon, transactions, indexing, N+1 fixes, chunking, cursor pagination, Redis/cache design, query optimization, large datasets, and zero-downtime migration concerns."
+license: UNLICENSED
 ---
 
 # Laravel 13 Data Performance
