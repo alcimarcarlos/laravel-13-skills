@@ -40,6 +40,15 @@ license: UNLICENSED
 - Prefer **DTOs/value objects** for non-trivial inputs/outputs (especially across async/jobs/integrations).
 - Avoid "helper soup": do not introduce global helpers for business rules.
 
+## Stability Defaults (correctness under failure)
+
+- Wrap multi-write invariants in a transaction; keep external I/O (HTTP, mail, broadcasts) outside it and dispatch after commit.
+- Make jobs and event listeners idempotent; retries and at-least-once delivery must not double-apply effects.
+- Retry transient database failures (deadlock, lock-wait) with capped backoff; do not retry non-idempotent work blindly.
+- Configure jobs intentionally: `tries`, `backoff`, `timeout`, `failed()` handling; avoid silent swallowing of exceptions.
+- Validate at the boundary and fail fast; return safe, non-leaking errors and let the framework handler log details.
+- Avoid partial writes: order operations so a failure leaves a consistent state, or compensate explicitly.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.

@@ -41,6 +41,15 @@ Avoid an action/service when:
 - Jobs should be idempotent where retries are possible.
 - Avoid hidden global helpers for business behavior; inject dependencies or use framework facades where local style allows.
 
+## Reliability and Failure Handling
+
+- Group writes that must succeed together in a transaction; commit before dispatching dependent jobs/events.
+- Keep transactions short: compute and validate first, hold locks for the minimum time, never await external services inside them.
+- Treat retries as at-least-once: guard side effects with idempotency keys, unique constraints, or status checks.
+- For queued work, set `tries`, `backoff`, and `timeout`, and implement `failed()` for cleanup/alerting; let unrecoverable jobs fail loudly rather than catch-and-ignore.
+- Convert transient failures (deadlocks, lock waits) into bounded, jittered retries; surface persistent failures.
+- Return safe error responses (no internals/stack traces/secrets); rely on the framework exception handler for structured logging.
+
 ## Eloquent + Schema
 
 ## Models

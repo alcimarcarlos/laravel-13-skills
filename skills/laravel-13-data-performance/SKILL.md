@@ -29,6 +29,9 @@ license: UNLICENSED
 - Cache computed reads with explicit invalidation or short TTLs.
 - Use transactions for multi-write invariants.
 - Queue slow, retryable work and make jobs idempotent.
+- Enforce a maximum pagination page size; never let clients request unbounded result sets.
+- Use bulk `insert`/`upsert` and batched writes instead of per-row queries in loops.
+- Use `whenLoaded`/`whenCounted` in resources so serialization never triggers lazy queries.
 - Use PSR-6/16 cache interfaces only for interoperable package boundaries; prefer Laravel cache APIs for ordinary application work.
 
 ## Safety Defaults (correctness + security)
@@ -36,6 +39,14 @@ license: UNLICENSED
 - Do not cache **authorization decisions** unless the cache key fully captures user/tenant/ability scope.
 - Do not move external HTTP calls inside transactions; dispatch after commit when needed.
 - When adding indexes/migrations on large tables, prefer **low-lock** patterns and reversible steps.
+
+## Stability Defaults (resilience under load)
+
+- Protect expensive cache rebuilds from stampedes with atomic locks (`Cache::lock`) or single-flight `remember` patterns.
+- Set connection/statement timeouts and bounded HTTP client timeouts; fail fast instead of piling up blocked workers.
+- Retry transient failures (deadlocks, lock waits, upstream 5xx) with capped backoff and jitter; keep the operation idempotent.
+- Keep transactions short: do reads/computation before opening them, and never await external I/O while holding row locks.
+- Under Octane/long-lived workers, avoid leaking request state into singletons/static properties; reset per-request state.
 
 ## Reference
 

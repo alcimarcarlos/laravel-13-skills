@@ -58,6 +58,35 @@ Hardening defaults:
 - Redact sensitive data in logs and observability tools.
 - Rotate leaked keys immediately; do not commit `.env` secrets.
 
+## Rate Limiting and Abuse Control
+
+- Define named limiters (for example in a service provider) and apply `throttle:<name>` middleware to sensitive routes.
+- Key login/OTP/password-reset limiters by credential + IP to slow credential stuffing without locking out shared NATs entirely.
+- Apply a default API throttle keyed by token/user; tighten it for write or expensive endpoints.
+- Bound list endpoints with a maximum page size and reject oversized `per_page` values.
+- Return `429` with `Retry-After` when throttled; never leak whether an account exists in auth error messages.
+
+## Transport, Cookies, and Headers
+
+- Enforce HTTPS in production and emit HSTS only over HTTPS.
+- Session config: `secure=true` (prod), `http_only=true`, `same_site=lax|strict`, encrypted cookies enabled.
+- Regenerate session ID on login and invalidate it on logout; rotate tokens on privilege change.
+- Baseline response headers: `X-Content-Type-Options: nosniff`, frame protection or CSP, `Referrer-Policy`, and a minimal CSP for first-party assets.
+- Restrict CORS to known origins, methods, and headers; do not reflect arbitrary origins with credentials enabled.
+
+## Injection-Safe Queries
+
+- Allowlist sortable/filterable columns and directions; map request keys to a fixed set before querying.
+- Never interpolate request data into `orderByRaw`, `whereRaw`, `selectRaw`, `havingRaw`, or `DB::raw`.
+- Use bound parameters when raw expressions are truly required.
+
+## Secrets and Supply Chain
+
+- Keep secrets in environment/secret managers, never in code, fixtures, or VCS history.
+- Pin and audit dependencies; review lockfile changes and known-vulnerability advisories.
+- Scrub secrets/PII from exception reports and third-party error/observability tools.
+- On any leak, rotate the credential and invalidate dependent tokens/sessions immediately.
+
 ## Agent Compatibility Notes
 
 For cross-agent usage guidance, see `docs/agent-compatibility.md`.

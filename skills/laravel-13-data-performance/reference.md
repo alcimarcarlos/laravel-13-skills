@@ -16,6 +16,13 @@
 - Use tags only when the configured cache driver supports them.
 - Prefer explicit invalidation for long TTLs; use short TTLs when invalidation is uncertain.
 
+## Cache Stampede Protection
+
+- Wrap expensive recomputation in an atomic lock so only one worker rebuilds a hot key while others wait or serve stale data.
+- Prefer single-flight `Cache::remember` plus a lock for fan-out reads; avoid many workers recomputing the same value on expiry.
+- Stagger TTLs (add jitter) for keys that would otherwise expire simultaneously.
+- Use `Cache::lock(...)->block()` with a short timeout for critical sections; release in a `finally` path so locks never leak.
+
 ## Queues
 
 - Jobs should be idempotent.
@@ -47,8 +54,31 @@
 ## Large Reads
 
 - Use `chunkById()` or `lazyById()` when mutating rows while iterating.
+- Avoid plain `chunk()` while updating the same rows you filter on: shifting offsets skip records. Use `chunkById()` instead.
 - Use `cursor()` for read-only streaming when ordering is stable.
 - Avoid loading full relation graphs for exports.
+
+## Bulk Writes
+
+- Replace per-row `create`/`save` loops with `insert()` or `upsert()` for large volumes; mind that bulk inserts bypass model events and timestamps.
+- Batch updates by stable key ranges rather than one query per row.
+- For mixed insert/update, define the unique-by columns and the columns to update in `upsert()`.
+
+## Read/Write Splitting
+
+- When read replicas are configured, route heavy read traffic to replicas and writes to the primary.
+- Account for replica lag: read-after-write paths that must be consistent should hit the primary or use `sticky` connections.
+
+## Timeouts and Resilience
+
+- Set bounded database connection/statement timeouts so a slow query cannot exhaust the worker pool.
+- Set explicit timeouts (and retries with backoff) on outbound HTTP clients; treat upstreams as unreliable.
+- Retry deadlocks and lock-wait timeouts with capped, jittered backoff; ensure the unit of work is idempotent before retrying.
+
+## Long-Lived Workers (Octane/queues)
+
+- Do not store per-request/user state in singletons, static properties, or container-shared instances.
+- Reset or re-resolve stateful services between requests/jobs; watch for growing in-memory caches and unbounded collections.
 
 ## Debugging
 

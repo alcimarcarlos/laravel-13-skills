@@ -35,6 +35,16 @@ license: UNLICENSED
 - Enforce **authz** at both query and policy levels (avoid cross-tenant leaks).
 - Avoid N+1 and unbounded lists; use **explicit eager loading** and bounded pagination.
 - Never leak exception internals or sensitive fields in API resources or error payloads.
+- Apply `throttle` middleware to every public/auth endpoint; tighten limits for write and expensive routes.
+- Enforce a maximum page size and reject oversized `per_page`/filter inputs.
+
+## Stability Defaults (resilient contracts)
+
+- Support idempotency for unsafe retried requests (for example an `Idempotency-Key` header) so a retried `POST` does not duplicate work.
+- Set bounded timeouts and capped, jittered retries on upstream calls; map upstream failures to stable `502/503/504` without leaking internals.
+- Degrade gracefully: return `503` with `Retry-After` when a dependency is down rather than hanging the request.
+- Keep responses bounded (pagination, field limits) so a single client cannot exhaust memory or time.
+- Return consistent error shapes for `429`/`5xx` so clients can implement safe backoff.
 
 ## Reference
 

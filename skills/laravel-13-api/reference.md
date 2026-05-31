@@ -67,6 +67,19 @@ Controller responsibilities:
 - Include a status URL or job/resource identifier when useful.
 - Make jobs idempotent and retry-safe.
 
+## Idempotency and Retries
+
+- Accept an idempotency key on unsafe, retriable endpoints; persist the first result keyed by client + key and replay it on duplicate requests.
+- Use unique constraints or status checks so concurrent duplicates cannot create double records.
+- Document which endpoints are safe to retry and the expected client backoff behavior.
+
+## Resilience to Upstreams
+
+- Wrap outbound calls with explicit timeouts and capped, jittered retries; never retry non-idempotent upstream writes blindly.
+- Consider a circuit breaker or short-circuit fallback when a dependency is failing, to avoid cascading slowdowns.
+- Map upstream/internal failures to stable status codes (`502/503/504`) with a safe Problem Details body; never surface stack traces, SQL, or secrets.
+- Send `Retry-After` with `429`/`503` so clients can back off deterministically.
+
 ## Versioning
 
 Use versioning when clients need stable contracts across releases.
