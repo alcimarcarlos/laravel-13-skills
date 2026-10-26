@@ -54,8 +54,10 @@ Este pacote não é uma aplicação final. Ele é uma coleção portátil de ins
 | `laravel-13-data-performance` | Use for Laravel 13 database, Eloquent, caching, performance, queues, Horizon, transactions, indexing, N+1 fixes, chunking, cursor pagination, Redis/cache design, query optimization, large datasets, and zero-downtime migration concerns. |
 | `laravel-13-frontend-inertia` | Use for Laravel 13 frontend work with Inertia.js, React, TypeScript, Tailwind, Vite, Blade integration, forms, validation errors, shared props, SSR, accessibility, realtime UI, file uploads, and frontend tests in Laravel applications. |
 | `laravel-13-security-auth` | Use for Laravel 13 security, OWASP review, authentication, authorization, Sanctum, Passport, policies, gates, Form Request authorize methods, session/token handling, validation hardening, mass assignment, file upload security, secrets, PII, and sensitive data handling. |
+| `laravel-13-systematic-debugging` | Systematic root-cause debugging protocol for Laravel 13: prohibits guessing, enforces minimal failing test reproducers (Pest/PHPUnit), single-variable fixes, and non-regression verification. |
 | `laravel-13-testing-quality` | Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, feature/unit tests, HTTP tests, database assertions, facade fakes, code review, Pint, Larastan/PHPStan, quality gates, CI readiness, and release validation. |
 | `laravel-13-upgrade-rector` | Use when upgrading a Laravel application or package to Laravel 13, migrating Laravel versions, configuring Rector with driftingly/rector-laravel, checking PHP 8.3+ requirements, resolving composer conflicts, planning dependency upgrades, or producing a Laravel 13 upgrade checklist. |
+| `laravel-13-zero-downtime-migrations` | Zero-downtime database migration strategies in Laravel 13 (PostgreSQL/MySQL): Expand/Contract pattern, non-blocking concurrent indexes, safe column additions, partitioned data backfills, and lock prevention. |
 
 ## Qualidade e Validação
 
