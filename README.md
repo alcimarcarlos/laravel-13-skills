@@ -58,6 +58,8 @@ Este pacote não é uma aplicação final. Ele é uma coleção portátil de ins
 | `laravel-13-testing-quality` | Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, feature/unit tests, HTTP tests, database assertions, facade fakes, code review, Pint, Larastan/PHPStan, quality gates, CI readiness, and release validation. |
 | `laravel-13-upgrade-rector` | Use when upgrading a Laravel application or package to Laravel 13, migrating Laravel versions, configuring Rector with driftingly/rector-laravel, checking PHP 8.3+ requirements, resolving composer conflicts, planning dependency upgrades, or producing a Laravel 13 upgrade checklist. |
 | `laravel-13-zero-downtime-migrations` | Zero-downtime database migration strategies in Laravel 13 (PostgreSQL/MySQL): Expand/Contract pattern, non-blocking concurrent indexes, safe column additions, partitioned data backfills, and lock prevention. |
+| `mysql-rds-optimization` | MySQL 8+ and AWS RDS/Aurora optimization: connection pooling, RDS Proxy, gap lock/deadlock prevention, InnoDB transaction isolation, EXPLAIN ANALYZE, replica lag mitigation, and IOPS tuning. |
+| `redis-architecture-caching` | Redis and AWS ElastiCache architecture: eviction safety (maxmemory-policy), keyspace hygiene (SCAN vs KEYS), cache stampede mitigation, distributed atomic locks, pipelines, and data structures. |
 
 ## Qualidade e Validação
 

@@ -48,6 +48,11 @@ license: UNLICENSED
 - Keep transactions short: do reads/computation before opening them, and never await external I/O while holding row locks.
 - Under Octane/long-lived workers, avoid leaking request state into singletons/static properties; reset per-request state.
 
+## Specialized Infrastructure Skills
+
+- When designing MySQL/Aurora schema, RDS Proxy, or tuning locks and replica lag, refer to `mysql-rds-optimization`.
+- When designing cache architectures, eviction safety, or atomic locks in ElastiCache, refer to `redis-architecture-caching`.
+
 ## Reference
 
 Read `reference.md` for detailed patterns, checklists, and examples for this skill.
