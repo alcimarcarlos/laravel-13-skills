@@ -1,6 +1,6 @@
 ---
 name: laravel-13-code-generation-contract
-description: "Enforces a mandatory output contract for Laravel 13 code generation, ensuring architectural boundaries, Form Requests, Policies, DTOs, Pest tests, and security baselines. Trigger when implementing any Laravel route, controller, service, or backend feature."
+description: "Mandatory output contract for Laravel 13: file trees, FormRequests, policies, tests. Trigger on new backend slices."
 license: UNLICENSED
 ---
 

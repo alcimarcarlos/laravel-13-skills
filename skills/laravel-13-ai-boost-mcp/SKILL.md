@@ -1,6 +1,6 @@
 ---
 name: laravel-13-ai-boost-mcp
-description: "Use for Laravel 13 AI-assisted development, Laravel Boost, Laravel AI SDK, laravel/ai, MCP server development, MCP tools/prompts/resources, AI agents, structured output, embeddings, vector search, reranking, image/audio generation, AI fakes in tests, and Boost search-docs workflows."
+description: "Laravel 13 AI & MCP: Boost, AI SDK, agents, vector search, MCP tools. Trigger on AI integrations."
 license: UNLICENSED
 ---
 

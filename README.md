@@ -47,19 +47,19 @@ Este pacote não é uma aplicação final. Ele é uma coleção portátil de ins
 
 | Skill | Quando usar |
 | --- | --- |
-| `laravel-13-ai-boost-mcp` | Use for Laravel 13 AI-assisted development, Laravel Boost, Laravel AI SDK, laravel/ai, MCP server development, MCP tools/prompts/resources, AI agents, structured output, embeddings, vector search, reranking, image/audio generation, AI fakes in tests, and Boost search-docs workflows. |
-| `laravel-13-api` | Use for Laravel 13 REST API design and implementation, including API routes, resources, JSON responses, RFC 9457 Problem Details, versioning, pagination, Sanctum token auth, policies, Form Requests, OpenAPI-style contracts, async 202 workflows, and API tests. |
-| `laravel-13-code-generation-contract` | Enforces a mandatory output contract for Laravel 13 code generation, ensuring architectural boundaries, Form Requests, Policies, DTOs, Pest tests, and security baselines. Trigger when implementing any Laravel route, controller, service, or backend feature. |
-| `laravel-13-core` | Use for Laravel 13 backend development in PHP 8.3+, including controllers, models, routes, Form Requests, services/actions, jobs, events, policies, migrations, factories, Blade-adjacent backend code, code review, and architecture decisions. Trigger whenever building, modifying, or reviewing ordinary Laravel application code. |
-| `laravel-13-data-performance` | Use for Laravel 13 database, Eloquent, caching, performance, queues, Horizon, transactions, indexing, N+1 fixes, chunking, cursor pagination, Redis/cache design, query optimization, large datasets, and zero-downtime migration concerns. |
-| `laravel-13-frontend-inertia` | Use for Laravel 13 frontend work with Inertia.js, React, TypeScript, Tailwind, Vite, Blade integration, forms, validation errors, shared props, SSR, accessibility, realtime UI, file uploads, and frontend tests in Laravel applications. |
-| `laravel-13-security-auth` | Use for Laravel 13 security, OWASP review, authentication, authorization, Sanctum, Passport, policies, gates, Form Request authorize methods, session/token handling, validation hardening, mass assignment, file upload security, secrets, PII, and sensitive data handling. |
-| `laravel-13-systematic-debugging` | Systematic root-cause debugging protocol for Laravel 13: prohibits guessing, enforces minimal failing test reproducers (Pest/PHPUnit), single-variable fixes, and non-regression verification. |
-| `laravel-13-testing-quality` | Use for Laravel 13 test writing, Pest 4, PHPUnit 12, factories, feature/unit tests, HTTP tests, database assertions, facade fakes, code review, Pint, Larastan/PHPStan, quality gates, CI readiness, and release validation. |
-| `laravel-13-upgrade-rector` | Use when upgrading a Laravel application or package to Laravel 13, migrating Laravel versions, configuring Rector with driftingly/rector-laravel, checking PHP 8.3+ requirements, resolving composer conflicts, planning dependency upgrades, or producing a Laravel 13 upgrade checklist. |
-| `laravel-13-zero-downtime-migrations` | Zero-downtime database migration strategies in Laravel 13 (PostgreSQL/MySQL): Expand/Contract pattern, non-blocking concurrent indexes, safe column additions, partitioned data backfills, and lock prevention. |
-| `mysql-rds-optimization` | MySQL 8+ and AWS RDS/Aurora optimization: connection pooling, RDS Proxy, gap lock/deadlock prevention, InnoDB transaction isolation, EXPLAIN ANALYZE, replica lag mitigation, and IOPS tuning. |
-| `redis-architecture-caching` | Redis and AWS ElastiCache architecture: eviction safety (maxmemory-policy), keyspace hygiene (SCAN vs KEYS), cache stampede mitigation, distributed atomic locks, pipelines, and data structures. |
+| `laravel-13-ai-boost-mcp` | Laravel 13 AI & MCP: Boost, AI SDK, agents, vector search, MCP tools. Trigger on AI integrations. |
+| `laravel-13-api` | Laravel 13 REST APIs: routes, RFC 9457 errors, Sanctum, pagination, resources. Trigger on API tasks. |
+| `laravel-13-code-generation-contract` | Mandatory output contract for Laravel 13: file trees, FormRequests, policies, tests. Trigger on new backend slices. |
+| `laravel-13-core` | Laravel 13 backend: controllers, FormRequests, policies, Eloquent, actions, jobs. Trigger on ordinary Laravel tasks. |
+| `laravel-13-data-performance` | Laravel 13 data performance: N+1 prevention, chunking, indexes, transactions. Trigger on query or DB optimization. |
+| `laravel-13-frontend-inertia` | Laravel 13 Inertia frontend: React, TypeScript, forms, shared props, SSR. Trigger on Inertia UI tasks. |
+| `laravel-13-security-auth` | Laravel 13 security: Sanctum, policies, mass assignment, secrets, PII, CSRF. Trigger on auth or security work. |
+| `laravel-13-systematic-debugging` | Laravel 13 systematic debugging: minimal Pest test reproducers, single-variable fixes. Trigger when diagnosing bugs. |
+| `laravel-13-testing-quality` | Laravel 13 test quality: Pest 4, PHPUnit 12, feature/unit tests, Pint, quality gates. Trigger when writing tests. |
+| `laravel-13-upgrade-rector` | Laravel 13 upgrade with Rector: PHP 8.3+, package conflicts, and migration rules. Trigger on version upgrades. |
+| `laravel-13-zero-downtime-migrations` | Zero-downtime migrations in Laravel: Expand/Contract, concurrent indexes, backfills. Trigger on DB schema changes. |
+| `mysql-rds-optimization` | MySQL 8+ and AWS RDS/Aurora: connection pooling, RDS Proxy, gap lock/deadlock prevention, indexes. Trigger on DB tuning. |
+| `redis-architecture-caching` | Redis & ElastiCache architecture: eviction safety, SCAN vs KEYS, stampede locks, pipelines. Trigger on caching/queues. |
 
 ## Qualidade e Validação
 

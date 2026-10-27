@@ -1,6 +1,6 @@
 ---
 name: laravel-13-systematic-debugging
-description: "Systematic root-cause debugging protocol for Laravel 13: prohibits guessing, enforces minimal failing test reproducers (Pest/PHPUnit), single-variable fixes, and non-regression verification."
+description: "Laravel 13 systematic debugging: minimal Pest test reproducers, single-variable fixes. Trigger when diagnosing bugs."
 license: UNLICENSED
 ---
 

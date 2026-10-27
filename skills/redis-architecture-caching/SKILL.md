@@ -1,6 +1,6 @@
 ---
 name: redis-architecture-caching
-description: "Redis and AWS ElastiCache architecture: eviction safety (maxmemory-policy), keyspace hygiene (SCAN vs KEYS), cache stampede mitigation, distributed atomic locks, pipelines, and data structures."
+description: "Redis & ElastiCache architecture: eviction safety, SCAN vs KEYS, stampede locks, pipelines. Trigger on caching/queues."
 license: UNLICENSED
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: laravel-13-api
-description: "Use for Laravel 13 REST API design and implementation, including API routes, resources, JSON responses, RFC 9457 Problem Details, versioning, pagination, Sanctum token auth, policies, Form Requests, OpenAPI-style contracts, async 202 workflows, and API tests."
+description: "Laravel 13 REST APIs: routes, RFC 9457 errors, Sanctum, pagination, resources. Trigger on API tasks."
 license: UNLICENSED
 ---
 

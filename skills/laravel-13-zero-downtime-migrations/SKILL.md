@@ -1,6 +1,6 @@
 ---
 name: laravel-13-zero-downtime-migrations
-description: "Zero-downtime database migration strategies in Laravel 13 (PostgreSQL/MySQL): Expand/Contract pattern, non-blocking concurrent indexes, safe column additions, partitioned data backfills, and lock prevention."
+description: "Zero-downtime migrations in Laravel: Expand/Contract, concurrent indexes, backfills. Trigger on DB schema changes."
 license: UNLICENSED
 ---
 

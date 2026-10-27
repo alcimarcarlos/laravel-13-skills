@@ -1,6 +1,6 @@
 ---
 name: laravel-13-frontend-inertia
-description: "Use for Laravel 13 frontend work with Inertia.js, React, TypeScript, Tailwind, Vite, Blade integration, forms, validation errors, shared props, SSR, accessibility, realtime UI, file uploads, and frontend tests in Laravel applications."
+description: "Laravel 13 Inertia frontend: React, TypeScript, forms, shared props, SSR. Trigger on Inertia UI tasks."
 license: UNLICENSED
 ---
 

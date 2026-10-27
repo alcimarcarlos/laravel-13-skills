@@ -1,6 +1,6 @@
 ---
 name: laravel-13-upgrade-rector
-description: "Use when upgrading a Laravel application or package to Laravel 13, migrating Laravel versions, configuring Rector with driftingly/rector-laravel, checking PHP 8.3+ requirements, resolving composer conflicts, planning dependency upgrades, or producing a Laravel 13 upgrade checklist."
+description: "Laravel 13 upgrade with Rector: PHP 8.3+, package conflicts, and migration rules. Trigger on version upgrades."
 license: UNLICENSED
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: mysql-rds-optimization
-description: "MySQL 8+ and AWS RDS/Aurora optimization: connection pooling, RDS Proxy, gap lock/deadlock prevention, InnoDB transaction isolation, EXPLAIN ANALYZE, replica lag mitigation, and IOPS tuning."
+description: "MySQL 8+ and AWS RDS/Aurora: connection pooling, RDS Proxy, gap lock/deadlock prevention, indexes. Trigger on DB tuning."
 license: UNLICENSED
 ---
 
